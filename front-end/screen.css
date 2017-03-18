@@ -44,7 +44,7 @@ h6 {
   font-size: 0.75em;
 }
 a {
-  color: #8e8e8e;
+  color: #454B56;
   outline: none;
 }
 a:hover {
@@ -314,6 +314,7 @@ pre {
 .post .post-head .post-title a:focus {
   text-decoration: none;
 }
+/*作者和时间*/
 .post .post-head .post-meta {
   color: #959595;
   margin: 14px 0 0px;
