@@ -922,7 +922,7 @@ pre {
   text-align: center;
 }
 .post .chart-media img {
-  width: 50%;
+  width: 80%;
 }
 #chartdiv {
   padding: 35px;
@@ -931,5 +931,4 @@ pre {
   position: relative;
   overflow: hidden;
   text-align: center;
-  margin-left: 200px;
 }
