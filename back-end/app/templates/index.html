@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>MODEL PAGE</title>
+    <!-- jQuery -->
+<script src="../static/vendor/jquery/jquery.min.js"></script>
+<script type="text/javascript">
+var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+
+	var post_request = function ()
+    {
+        $.post($SCRIPT_ROOT + '/_hhh', {} , function(data){
+            data = eval(data);
+            console.log(data);
+            $ ("#disp").append ("<p>" + data.a+" "+ data.b+ "</p >");
+        });
+    };
+	var post_img = function ()
+    {
+        $.post($SCRIPT_ROOT + '/_he', {}, function(url){
+            url = eval(url);
+            console.log(url);
+            $ ("#img").append ("<img src=\"" + url.name+ "\"/>");
+        });
+    };
+</script>
+</head>
+<body>
+    <input type="button" value="Ajax提交" onclick="post_request();" />
+    <div id="disp"></div>
+	<input type="button" value="发送姓名返回图片" onclick="post_img();" />
+    <div id="img"></div>
+
+</body>
+</html>

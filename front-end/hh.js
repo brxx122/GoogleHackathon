@@ -1,23 +1,49 @@
+// for copy.html
+var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
 console.log("========================");
 var htmlobj=$.ajax({url:"header.html",async:false});
-$("#common-header").append(htmlobj.responseText);
+$("#common-header").prepend(htmlobj.responseText);
+console.log(htmlobj.responseText);
 var page = 0;
 var current_news=0;
-var J = [{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"}];
+var J = [{"title":"fuck","author":"hh1","time":"2017年2月21日"},
+{"title":"fuck","author":"hh1","time":"2017年2月21日"},
+{"title":"fuck","author":"hh1","time":"2017年2月21日"},
+{"title":"fuck","author":"hh1","time":"2017年2月21日"},
+{"title":"fuck","author":"hh1","time":"2017年2月21日"},
+{"title":"fuck2","author":"hh1","time":"2017年2月21日"},
+{"title":"fuck2","author":"hh1","time":"2017年2月21日"},
+{"title":"fuck2","author":"hh1","time":"2017年2月21日"},
+{"title":"fuck2","author":"hh1","time":"2017年2月21日"},
+{"title":"fuck2","author":"hh1","time":"2017年2月21日"},
+{"title":"fuck","author":"hh1","time":"2017年2月21日"},
+{"title":"fuck","author":"hh1","time":"2017年2月21日"},
+{"title":"fuck","author":"hh1","time":"2017年2月21日"},
+{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"}];
 var get_labels = function(){
     $.get("url...").done
 }
-var post_request_right = function () {
+var copy_right = function () {
     if (current_news <= 5) {return false;}
-    $.post("{{url_for('hello')}}", page++, success(data));
-};  
+    $.post(SCRIPT_ROOT+'/_return_new_by_year', page++, success(data));
+};
+<<<<<<< HEAD
 var post_request_left = function () {
     if (page==0) {return false;}
     $.post("{{url_for('hello')}}", page--, success(data));
-}; 
+};
 
-$(".previous").click(post_request_left()); 
+$(".previous").click(post_request_left());
 $(".next").click(post_request_right());
+=======
+var copy_left = function () {
+    if (page==0) {return false;}
+    $.post("{{url_for('/')}}", page--, success(data));
+};
+
+$(".previous").click(copy_left());
+$(".next").click(copy_right());
+>>>>>>> 0410cb8ca93651fe2e486a7770b29f70c5ef0027
 
 var success = function(data) {
     current_news=0;
@@ -32,42 +58,132 @@ var success = function(data) {
         var author = item.author;
         var time = item.time;
         var content = item.title;
+<<<<<<< HEAD
         var str = '<article class = "post">\
         <h1 id="title" class="post-title"><a  href="post.html">'+title+'</a></h1>\
         <div class="post-meta"><span id="author1" class="author">作者：<a href="/author/wangsai/">'+author+'</a></span> &emsp;&bull;<time id="time1" class="post-date" datetime="2017年2月21日星期二凌晨3点21分" title="2017年2月21日星期二凌晨3点21分">'+time+'</time>\
+=======
+
+        var label_html = function (labels) {
+            var result_labels = ''
+            $.each(labels,function(i,subitem) {
+                result_labels += '<a id = "label" href="copylaravel.html">'+subitem+'</a>';
+            });
+            return result_labels;
+        };
+
+        var label_html = label_html(item.label); // 这里是数组，返回html文本分
+
+        var str =  '<article id=73 class="post">\
+        <div class="post-head">\
+        <h1 id="title" class="post-title"><a href="post.html">'+title+'</a></h1>\
+        <div class="post-meta">\
+        <span class="author">作者：<a id="author" href="personal.html">'+author+'</a></span> &emsp;&bull;\
+        <span time id="time1" class="post-date" datetime="2017年2月21日星期二凌晨3点21分" title="2017年2月21日星期二凌晨3点21分">'+time+'</time></span>\
+>>>>>>> 0410cb8ca93651fe2e486a7770b29f70c5ef0027
         </div>\
         </div>\
-        <div id="content1" class="post-content">\
-        <p>'+content+'</p>\
+        <div class="post-content">\
+        <p id="content">'+content+'</p>\
         </div>\
-        <div class="post-permalink"><a id="readmore1" href="/post/laravel-5-5-will-be-the-next-lts-release/" class="btn btn-default">read more</a>\
+        <div class="post-permalink">\
+        <a id="readmore" href="post.html" class="btn btn-default">READ MORE</a>\
         </div>\
         <footer class="post-footer clearfix">\
-        <div class="pull-left tag-list">\
-        <i class="fa fa-folder-open-o"></i>\
-        <a href="/tag/laravel-5/">Laravel 5</a>, <a href="/tag/getting-started-with-laravel/">Laravel入门教程</a>, <a href="/tag/laravel-5-2/">Laravel 5.2</a>\
-        </div>\
-        <div class="pull-right share">\
+        <div class = "widget">\
+        <div class="content tag-cloud">'+label_html+'</div>\
         </div>\
         </footer>\
-        </article>'
+        </article>';
+
+
+
         console.log("iteration:"+i.toString());
         result += str;
         console.log(i+" : "+item.title);
     });
-    $("main").html(result);
+    $("#news").append(result);
     console.log("current_news="+current_news);
 }
+
 console.log(".....");
 
+<<<<<<< HEAD
 $(document).ready(function(){
     if (page == 0) {
     success(J);
 } else {
     post_requst();
     console.log(page);
+=======
+$(document).ready(
+    $.post(SCRIPT_ROOT+'/_return_news_by_year',[2015,1],function(data){
+        success(data);
+    });
+);
+
+// for copy.html to post.html
+var post_request = function () {
+    var title = $("#title").text();
+    var author = $("#author").text();
+    var time = $("#time").text();
+    console.log("to post.html"+title);
+    $.post("{{url_for('post')",{"title":title,"author":author,"time",time},function (json) {
+        set_up_post(title,author,time);
+    });
+};
+$.("#title").click(post_request());
+$.("#readmore").click(post_request());
+
+// for copy.html
+var set_up_post = function (title, author, time) {
+    $ ("#post-title").text(title);
+    $ ("#post-author").text(author);
+    $ ("#post-time").text(time);
+    // $ ("#post-content").text(time);
+};
+
+// for copy.html to person.html
+
+var person_request = function () {
+    var title = $("#title").text();
+    var author = $("#author").text();
+    var time = $("#time").text();
+    console.log("to person.html"+author);
+    $.post("{{url_for('person')",{"title":title,"author":author,"time",time},function (json) {
+        set_up_person(title,author,time);
+    });
+>>>>>>> 0410cb8ca93651fe2e486a7770b29f70c5ef0027
 }
-});
+
+var set_up_person = function (title, author, time) {
+    $ ("#post-title").text(title);
+    $ ("#person-name").text("作者："+name);
+    $ ("#post-time").text(time);
+    // $ ("#post-content").text(time);
+};
+
+var search_label = function () {
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 var find_parent = function() {
     var head = $(this).parent("#title");
@@ -75,8 +191,3 @@ var find_parent = function() {
     console.log("==========="+title);
 };
 find_parent();
-
-
-
-
-
