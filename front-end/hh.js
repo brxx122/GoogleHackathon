@@ -1,3 +1,6 @@
+console.log("========================");
+var htmlobj=$.ajax({url:"header.html",async:false});
+$("#common-header").append(htmlobj.responseText);
 var page = 0;
 var current_news=0;
 var J = [{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"},{"title":"fuck","author":"hh1","time":"2017年2月21日"}];
@@ -9,9 +12,13 @@ var post_request_right = function () {
     $.post("{{url_for('hello')}}", page++, success(data));
 };  
 var post_request_left = function () {
-    if (page==0) {return flase;}
+    if (page==0) {return false;}
     $.post("{{url_for('hello')}}", page--, success(data));
-};              
+}; 
+
+$(".previous").click(post_request_left()); 
+$(".next").click(post_request_right());
+
 var success = function(data) {
     current_news=0;
     console.log("loading...");
@@ -26,7 +33,7 @@ var success = function(data) {
         var time = item.time;
         var content = item.title;
         var str = '<article class = "post">\
-        <h1 id="title1" class="post-title"><a  href="post.html">'+title+'</a></h1>\
+        <h1 id="title" class="post-title"><a  href="post.html">'+title+'</a></h1>\
         <div class="post-meta"><span id="author1" class="author">作者：<a href="/author/wangsai/">'+author+'</a></span> &emsp;&bull;<time id="time1" class="post-date" datetime="2017年2月21日星期二凌晨3点21分" title="2017年2月21日星期二凌晨3点21分">'+time+'</time>\
         </div>\
         </div>\
@@ -55,13 +62,19 @@ console.log(".....");
 
 $(document).ready(function(){
     if (page == 0) {
-    success(J));
+    success(J);
 } else {
     post_requst();
     console.log(page);
 }
 });
 
+var find_parent = function() {
+    var head = $(this).parent("#title");
+    var title = head.text();
+    console.log("==========="+title);
+};
+find_parent();
 
 
 
