@@ -145,8 +145,13 @@ pre {
 .btn-doc {
   position: relative;
   bottom: -40px;
-  border: 1px solid #f1362f;
+  border: 1px solid #ffffff;
   background-color: transparent;
+}
+.btn-doc:hover {
+  border: 1px solid #2D2E43;
+  background: #2D2E43;
+  color: #ffffff;
 }
 @media only screen and (max-width: 767px) {
   .btn-doc {
