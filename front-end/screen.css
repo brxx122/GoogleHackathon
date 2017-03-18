@@ -44,11 +44,11 @@ h6 {
   font-size: 0.75em;
 }
 a {
-  color: #f4645f;
+  color: #454B56;
   outline: none;
 }
 a:hover {
-  color: #f4645f;
+  color: #8e8e8e;
 }
 a:active,
 a:focus,
@@ -59,9 +59,10 @@ a img {
   padding: 7px 14px;
   border-radius: 2px;
 }
+/*阅读原文的边框和背景*/
 .btn-default {
-  border: 1px solid #f4645f;
-  background: #f4645f;
+  border: 1px solid #8e8e8e;
+  background: #8e8e8e;
   color: #ffffff;
   -webkit-transition: all 0.2s ease-in-out;
        -o-transition: all 0.2s ease-in-out;
@@ -97,11 +98,11 @@ input[type="text"]:focus,
 input[type="url"]:focus,
 input[type="email"]:focus,
 textarea:focus {
-  border: 1px solid #f4645f;
+  border: 1px solid #8e8e8e;
   outline: none;
 }
 blockquote {
-  border-left: 4px solid #f4645f;
+  border-left: 4px solid #8e8e8e;
 }
 pre {
   padding: 0;
@@ -110,22 +111,23 @@ pre {
 }
 ::-moz-selection {
   color: #ffffff;
-  background: #f4645f;
+  background: #8e8e8e;
   text-shadow: none;
 }
 ::selection {
   color: #ffffff;
-  background: #f4645f;
+  background: #8e8e8e;
   text-shadow: none;
 }
 /* header */
 /*====================================================
 	header
 ====================================================*/
+/*主标题栏*/
 .main-header {
   text-align: center;
   padding: 42px 0;
-  background: #f4645f;
+  background: #000000;
 }
 .main-header .branding {
   font-size: 3.5em;
@@ -181,7 +183,7 @@ pre {
   position: relative;
 }
 .main-navigation .menu li.nav-current {
-  border-bottom: 2px solid #f4645f;
+  border-bottom: 2px solid #8e8e8e;
   margin-bottom: -2px;
 }
 .main-navigation .menu li a {
@@ -191,7 +193,7 @@ pre {
   padding: 0 21px;
 }
 .main-navigation .menu li:hover > a {
-  color: #f4645f;
+  color: #8e8e8e;
   text-decoration: none;
 }
 .main-navigation .menu li ul {
@@ -220,7 +222,7 @@ pre {
   color: #505050;
 }
 .main-navigation .menu li ul:hover > a {
-  color: #f4645f;
+  color: #8e8e8e;
 }
 .main-navigation .menu li:hover ul {
   visibility: visible;
@@ -236,7 +238,7 @@ pre {
     display: block;
   }
   .main-navigation .menu li:hover > a {
-    color: #f4645f;
+    color: #8e8e8e;
     text-decoration: none;
   }
   .main-navigation .menu li ul {
@@ -278,7 +280,7 @@ pre {
 }
 .post .featured {
   position: absolute;
-  background: #f4645f;
+  background: #8e8e8e;
   color: #ffffff;
   text-align: center;
   top: -12px;
@@ -312,6 +314,7 @@ pre {
 .post .post-head .post-title a:focus {
   text-decoration: none;
 }
+/*作者和时间*/
 .post .post-head .post-meta {
   color: #959595;
   margin: 14px 0 0px;
@@ -344,7 +347,7 @@ pre {
   margin-left: 7px;
 }
 .post .post-footer .tag-list a:hover {
-  color: #f4645f;
+  color: #8e8e8e;
 }
 /* post content */
 /*====================================================
@@ -463,7 +466,7 @@ pre {
 }
 .post-content blockquote {
   margin: 0 0 1.64em 0;
-  border-left: 3px solid #f4645f;
+  border-left: 3px solid #8e8e8e;
   padding-left: 12px;
   color: #666664;
 }
@@ -614,11 +617,12 @@ pre {
   text-align: center;
   display: block;
 }
+/*页码*/
 .pagination a {
   text-align: center;
   display: inline-block;
   color: #ffffff;
-  background: #f4645f;
+  background: #8e8e8e;
   border-radius: 2px;
 }
 .pagination a a:hover {
@@ -632,7 +636,7 @@ pre {
   line-height: 36px;
 }
 .pagination .page-number {
-  background: #f4645f;
+  background: #8e8e8e;
   color: #ffffff;
   margin: 0 3px;
   display: inline-block;
@@ -710,7 +714,7 @@ pre {
   content: "";
   width: 90px;
   height: 1px;
-  background: #f4645f;
+  background: #8e8e8e;
   position: absolute;
   left: 0;
   bottom: -1px;
@@ -730,7 +734,7 @@ pre {
           transition: all 0.2s ease;
 }
 .widget .recent-post .recent-single-post .post-title:hover {
-  color: #f4645f;
+  color: #8e8e8e;
   text-decoration: none;
 }
 .widget .recent-post .recent-single-post .date {
@@ -749,8 +753,8 @@ pre {
 }
 .widget .tag-cloud a:hover {
   color: #ffffff;
-  background: #f4645f;
-  border: 1px solid #f4645f;
+  background: #8e8e8e;
+  border: 1px solid #8e8e8e;
   text-decoration: none;
 }
 .widget .social {
@@ -774,8 +778,8 @@ pre {
 }
 .widget .social li:hover i {
   color: #ffffff;
-  background: #f4645f;
-  border: 1px solid #f4645f;
+  background: #8e8e8e;
+  border: 1px solid #8e8e8e;
 }
 .widget .newsletter .input-group {
   margin-bottom: 10px;
@@ -842,7 +846,7 @@ pre {
   border: 1px solid #303030;
 }
 .main-footer .widget .tag-cloud a:hover {
-  border: 1px solid #f4645f;
+  border: 1px solid #8e8e8e;
 }
 .main-footer .widget .friend-links a {
   border: none;
@@ -861,7 +865,7 @@ pre {
   color: #959595;
 }
 .main-footer .widget .recent-post .recent-single-post .post-title:hover {
-  color: #f4645f;
+  color: #8e8e8e;
 }
 .main-footer .widget .recent-post .recent-single-post .date {
   color: #505050;
@@ -893,12 +897,10 @@ pre {
   display: none;
 }
 #back-to-top:hover {
-  background: #f4645f;
+  background: #8e8e8e;
 }
 #back-to-top i {
   width: 30px;
   height: 30px;
   line-height: 30px;
 }
-
-
