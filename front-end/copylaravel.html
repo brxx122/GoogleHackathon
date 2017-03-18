@@ -17,6 +17,21 @@
     <link rel="stylesheet" href="vs.min.css">
     <link rel="stylesheet" type="text/css" href="screen.css">
 
+    <link rel="stylesheet" href="./css/reset.css" />
+    		<!--<link rel="stylesheet" href="./css/demo.css" />-->
+
+    		<!-- jqPagination styles -->
+    		<!--<link rel="stylesheet" href="./css/jqpagination.css" />-->s
+
+    		<!-- scripts -->
+    		<script src="./js/jquery-1.7.2.min.js"></script>
+    		<script src="./js/jquery.jqpagination.js"></script>
+    		<script src="./js/scripts.js"></script>
+
+    		<!-- generic demo script -->
+    		<script src="./js/demo.js"></script>
+
+
     <link rel="canonical" href="http://www.golaravel.com/" />
     <meta name="referrer" content="origin" />
     <link rel="next" href="http://www.golaravel.com/page/2/" />
@@ -366,11 +381,36 @@
                         </footer>
                     </article>
 
+<style type="text/css">
+    #pagetext {
+        vertical-align:middle;
+        text-align:center;
+        line-height:36px;  /*line-height must be equal to height*/
+        BACKGROUND-COLOR: #8e8e8e;
+        BORDER-BOTTOM: #8e8e8e 1px solid;
+        BORDER-LEFT: #8e8e8e 1px solid;
+        BORDER-RIGHT: #8e8e8e 1px solid;
+        BORDER-TOP: #8e8e8e 1px solid;
+        COLOR: #ffffff;
+        HEIGHT: 36px;
+        width: 130px;
+    }
+</style>
 
-                    <nav class="pagination" role="navigation">
-                        <span class="page-number">第 1 页 &frasl; 共 6 页</span>
-                        <a class="older-posts" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-                    </nav>
+<nav class="gigantic pagination">
+    <!--<a href="#" class="first" data-action="first"><i class="fa fa-angle-double-left"></i></a>-->
+    <a href="#" class="previous" data-action="previous"><i class="fa fa-angle-left"></i></a>&ensp;
+    <!--<span class="page-number">第 1 页 &frasl; 共 6 页</span>-->
+    <input type="text"  id="pagetext" readonly="readonly" />&ensp;
+    <a href="#" class="next" data-action="next"><i class="fa fa-angle-right"></i></a>
+    <!--<a href="#" class="last" data-action="last"><i class="fa fa-angle-double-right"></i></a>-->
+</nav>
+
+<!--<nav class="pagination" role="navigation">
+    <span class="page-number">第 1 页 &frasl; 共 6 页</span>
+        <a class="older-posts" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+</nav>-->
+
 
 
                 </main>
