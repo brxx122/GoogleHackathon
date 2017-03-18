@@ -746,6 +746,7 @@ pre {
   color: #959595;
 }
 .widget .tag-cloud a {
+  border-radius: 30px;
   border: 1px solid #ebebeb;
   padding: 2px 7px;
   color: #959595;
