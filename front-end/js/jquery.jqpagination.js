@@ -372,7 +372,7 @@
 		current_page	: 1,
 		link_string		: '',
 		max_page		: null,
-		page_string		: '第{current_page}页 ⁄ 共{max_page}页',
+		page_string		: 'Page {current_page} of {max_page}',
 		paged			: function () {}
 	};
 
