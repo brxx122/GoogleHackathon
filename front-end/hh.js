@@ -26,14 +26,24 @@ var get_labels = function(){
 var copy_right = function () {
     if (current_news <= 5) {return false;}
     $.post(SCRIPT_ROOT+'/_return_new_by_year', page++, success(data));
-};  
+};
+<<<<<<< HEAD
+var post_request_left = function () {
+    if (page==0) {return false;}
+    $.post("{{url_for('hello')}}", page--, success(data));
+};
+
+$(".previous").click(post_request_left());
+$(".next").click(post_request_right());
+=======
 var copy_left = function () {
     if (page==0) {return false;}
     $.post("{{url_for('/')}}", page--, success(data));
-}; 
+};
 
-$(".previous").click(copy_left()); 
+$(".previous").click(copy_left());
 $(".next").click(copy_right());
+>>>>>>> 0410cb8ca93651fe2e486a7770b29f70c5ef0027
 
 var success = function(data) {
     current_news=0;
@@ -48,6 +58,11 @@ var success = function(data) {
         var author = item.author;
         var time = item.time;
         var content = item.title;
+<<<<<<< HEAD
+        var str = '<article class = "post">\
+        <h1 id="title" class="post-title"><a  href="post.html">'+title+'</a></h1>\
+        <div class="post-meta"><span id="author1" class="author">作者：<a href="/author/wangsai/">'+author+'</a></span> &emsp;&bull;<time id="time1" class="post-date" datetime="2017年2月21日星期二凌晨3点21分" title="2017年2月21日星期二凌晨3点21分">'+time+'</time>\
+=======
 
         var label_html = function (labels) {
             var result_labels = ''
@@ -65,6 +80,7 @@ var success = function(data) {
         <div class="post-meta">\
         <span class="author">作者：<a id="author" href="personal.html">'+author+'</a></span> &emsp;&bull;\
         <span time id="time1" class="post-date" datetime="2017年2月21日星期二凌晨3点21分" title="2017年2月21日星期二凌晨3点21分">'+time+'</time></span>\
+>>>>>>> 0410cb8ca93651fe2e486a7770b29f70c5ef0027
         </div>\
         </div>\
         <div class="post-content">\
@@ -92,6 +108,14 @@ var success = function(data) {
 
 console.log(".....");
 
+<<<<<<< HEAD
+$(document).ready(function(){
+    if (page == 0) {
+    success(J);
+} else {
+    post_requst();
+    console.log(page);
+=======
 $(document).ready(
     $.post(SCRIPT_ROOT+'/_return_news_by_year',[2015,1],function(data){
         success(data);
@@ -129,6 +153,7 @@ var person_request = function () {
     $.post("{{url_for('person')",{"title":title,"author":author,"time",time},function (json) {
         set_up_person(title,author,time);
     });
+>>>>>>> 0410cb8ca93651fe2e486a7770b29f70c5ef0027
 }
 
 var set_up_person = function (title, author, time) {
@@ -160,8 +185,9 @@ var search_label = function () {
 
 
 
-
-
-
-
-
+var find_parent = function() {
+    var head = $(this).parent("#title");
+    var title = head.text();
+    console.log("==========="+title);
+};
+find_parent();

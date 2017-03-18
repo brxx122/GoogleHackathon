@@ -910,4 +910,26 @@ pre {
   height: 30px;
   line-height: 30px;
 }
-
+#ranklist {
+  margin-top: 100px;
+}
+#bigdatachart {
+  margin:0 auto;
+}
+.post .chart-media {
+  margin-top: 30px;
+  overflow: hidden;
+  text-align: center;
+}
+.post .chart-media img {
+  width: 50%;
+}
+#chartdiv {
+  padding: 35px;
+  background: #ffffff;
+  margin-bottom: 35px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  margin-left: 200px;
+}
