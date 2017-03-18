@@ -1,3 +1,5 @@
+// for copy.html
+var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
 console.log("========================");
 var htmlobj=$.ajax({url:"header.html",async:false});
 $("#common-header").prepend(htmlobj.responseText);
@@ -23,11 +25,11 @@ var get_labels = function(){
 }
 var copy_right = function () {
     if (current_news <= 5) {return false;}
-    $.post("{{url_for('hello')}}", page++, success(data));
+    $.post(SCRIPT_ROOT+'/_return_new_by_year', page++, success(data));
 };  
 var copy_left = function () {
     if (page==0) {return false;}
-    $.post("{{url_for('hello')}}", page--, success(data));
+    $.post("{{url_for('/')}}", page--, success(data));
 }; 
 
 $(".previous").click(copy_left()); 
@@ -47,6 +49,16 @@ var success = function(data) {
         var time = item.time;
         var content = item.title;
 
+        var label_html = function (labels) {
+            var result_labels = ''
+            $.each(labels,function(i,subitem) {
+                result_labels += '<a id = "label" href="copylaravel.html">'+subitem+'</a>';
+            });
+            return result_labels;
+        };
+
+        var label_html = label_html(item.label); // 这里是数组，返回html文本分
+
         var str =  '<article id=73 class="post">\
         <div class="post-head">\
         <h1 id="title" class="post-title"><a href="post.html">'+title+'</a></h1>\
@@ -63,12 +75,12 @@ var success = function(data) {
         </div>\
         <footer class="post-footer clearfix">\
         <div class = "widget">\
-        <div class="content tag-cloud">\
-        <a href="/tag/laravel-5/">Laravel 5</a> <a href="/tag/getting-started-with-laravel/">Laravel入门教程</a> <a href="/tag/laravel-5-2/">Laravel 5.2</a>\
-        </div>\
+        <div class="content tag-cloud">'+label_html+'</div>\
         </div>\
         </footer>\
         </article>';
+
+
 
         console.log("iteration:"+i.toString());
         result += str;
@@ -81,26 +93,54 @@ var success = function(data) {
 console.log(".....");
 
 $(document).ready(
-    success(J)
+    $.post(SCRIPT_ROOT+'/_return_news_by_year',[2015,1],function(data){
+        success(data);
+    });
 );
 
-
-// for post.html
-var find_parent = function() {
+// for copy.html to post.html
+var post_request = function () {
     var title = $("#title").text();
     var author = $("#author").text();
     var time = $("#time").text();
-    console.log(title);
+    console.log("to post.html"+title);
+    $.post("{{url_for('post')",{"title":title,"author":author,"time",time},function (json) {
+        set_up_post(title,author,time);
+    });
+};
+$.("#title").click(post_request());
+$.("#readmore").click(post_request());
+
+// for copy.html
+var set_up_post = function (title, author, time) {
+    $ ("#post-title").text(title);
+    $ ("#post-author").text(author);
+    $ ("#post-time").text(time);
+    // $ ("#post-content").text(time);
+};
+
+// for copy.html to person.html
+
+var person_request = function () {
+    var title = $("#title").text();
+    var author = $("#author").text();
+    var time = $("#time").text();
+    console.log("to person.html"+author);
+    $.post("{{url_for('person')",{"title":title,"author":author,"time",time},function (json) {
+        set_up_person(title,author,time);
+    });
+}
+
+var set_up_person = function (title, author, time) {
+    $ ("#post-title").text(title);
+    $ ("#person-name").text("作者："+name);
+    $ ("#post-time").text(time);
+    // $ ("#post-content").text(time);
+};
+
+var search_label = function () {
 
 };
-var post_request = function (title,author,time) {
-    
-};
-
-
-
-
-
 
 
 
